@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dnsdrill"
+version = "0.1.0"
+description = "Cliente DNS minimalista que construye y parsea paquetes RFC 1035 a mano con struct — cero dependencias, estilo dig"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "ThorrijaDEV" }]
+keywords = ["dns", "rfc1035", "networking", "cli", "stdlib"]
+classifiers = [
+  "Intended Audience :: System Administrators",
+  "Topic :: Internet :: Name Service (DNS)",
+  "Programming Language :: Python :: 3",
+]
+
+[project.scripts]
+dnsdrill = "dnsdrill.cli:main"
+
+[project.urls]
+Repository = "https://github.com/ThorrijaDEV/dnsdrill"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dnsdrill"]
